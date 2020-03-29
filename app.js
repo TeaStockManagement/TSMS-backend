@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/users", usersRouter);
 
 //connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/EventPlanner");
+mongoose.connect("mongodb://127.0.0.1:27017/TeaStock");
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Connection esteblished successfully");
