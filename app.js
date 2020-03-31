@@ -7,6 +7,11 @@ var mongoose = require("mongoose");
 
 var usersRouter = require("./routes/users");
 
+
+//suppler Order Route
+const supplerorder = require('./routes/SupplerOrder');
+
+
 var app = express();
 
 app.use(function(req, res, next) {
@@ -31,6 +36,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
+
+//suppler Order route
+app.use("/supplerorder",supplerorder);
+
+
+
+
+
+
 
 //connect to MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/TeaStock");
