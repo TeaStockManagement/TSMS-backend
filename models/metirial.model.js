@@ -8,4 +8,4 @@ const MetirialSchema = new Schema({
     ExpireDate:{type:Date,default:null}
 });
 
-module.exports = module('Metirial',MetirialSchema);
+module.exports = mongoose.model('Metirial',MetirialSchema);

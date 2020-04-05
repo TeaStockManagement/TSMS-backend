@@ -8,7 +8,10 @@ const ExpensiveSchema = new Schema({
     ExpensiveType:String,
     Amount:Number,
     Date:Date,
-    UserID:Number
+    UserID:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    }
 
 });
 

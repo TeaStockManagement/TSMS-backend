@@ -10,6 +10,7 @@ var usersRouter = require("./routes/users");
 
 //suppler Order Route
 const supplerorder = require('./routes/SupplerOrder');
+const metirial = require('./routes/Metirial');
 
 
 var app = express();
@@ -39,10 +40,8 @@ app.use("/users", usersRouter);
 
 //suppler Order route
 app.use("/supplerorder",supplerorder);
-
-
-
-
+//add metirial to db
+app.use("/metirial",metirial);
 
 
 
