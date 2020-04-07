@@ -8,6 +8,14 @@ var mongoose = require("mongoose");
 var usersRouter = require("./routes/users");
 var shopRouter = require("./routes/shops")
 
+
+//suppler Order Route
+const supplerorder = require('./routes/SupplerOrder');
+const metirial = require('./routes/Metirial');
+const teaQuality = require('./routes/TeaQuality');
+const Item = require('./routes/Item');
+
+
 var app = express();
 
 app.use(function(req, res, next) {
@@ -34,7 +42,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/users", usersRouter);
 app.use("/shops",shopRouter)
 
+//suppler Order route
+app.use("/supplerorder",supplerorder);
+//add metirial to db
+app.use("/metirial",metirial);
+app.use("/TeaQuality",teaQuality);
+app.use("/Item",Item);
+
+
 //connect to MongoDB
+
 mongoose.connect("mongodb://127.0.0.1:27017/TeaStockSystem");
 const connection = mongoose.connection;
 connection.once("open", () => {
