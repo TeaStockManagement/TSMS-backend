@@ -6,6 +6,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 var usersRouter = require("./routes/users");
+var shopRouter = require("./routes/shops")
 
 var app = express();
 
@@ -31,9 +32,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
+app.use("/shops",shopRouter)
 
 //connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/EventPlanner");
+mongoose.connect("mongodb://127.0.0.1:27017/TeaStockSystem");
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Connection esteblished successfully");

@@ -28,7 +28,9 @@ router.post('/authenticate', function(req, res) {
           // create a token with only our given payload
       // we don't want to pass in the entire user since that has the password
       const payload = {
-        username:user.username
+        username:user.username,
+        role:user.role,
+        status:user.status
       };
           var token = jwt.sign(payload, config.secret, {
            expiresIn: 1440 // expires in 24 hours

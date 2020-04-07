@@ -7,7 +7,15 @@ var userSchema=mongoose.Schema({
     lname:String,
     mobile:Number,
     email:String,
-    nic:String
+    nic:String,
+    status:{
+        type:String,
+        default:"Inactive"
+    },
+    role:{
+        type:String,
+        default:"medRep"
+    }
 });
 
 var User = mongoose.model('User', userSchema);
