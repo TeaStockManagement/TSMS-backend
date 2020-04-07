@@ -12,6 +12,7 @@ var usersRouter = require("./routes/users");
 const supplerorder = require('./routes/SupplerOrder');
 const metirial = require('./routes/Metirial');
 const teaQuality = require('./routes/TeaQuality');
+const Item = require('./routes/Item');
 
 
 var app = express();
@@ -44,7 +45,7 @@ app.use("/supplerorder",supplerorder);
 //add metirial to db
 app.use("/metirial",metirial);
 app.use("/TeaQuality",teaQuality);
-
+app.use("/Item",Item);
 
 
 //connect to MongoDB
