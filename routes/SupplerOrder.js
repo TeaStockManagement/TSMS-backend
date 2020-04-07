@@ -7,5 +7,8 @@ router.post('/addorder',function(req,res){
     console.log(req.body);
 });
 
+router.get('/getorderdata',function(req,res){
+    
+})
 
 module.exports = router;
