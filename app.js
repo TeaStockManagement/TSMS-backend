@@ -6,6 +6,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 var usersRouter = require("./routes/users");
+var shopRouter = require("./routes/shops")
 
 
 //suppler Order Route
@@ -39,6 +40,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
+app.use("/shops",shopRouter)
 
 //suppler Order route
 app.use("/supplerorder",supplerorder);
@@ -49,7 +51,8 @@ app.use("/Item",Item);
 
 
 //connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/TeaStock");
+
+mongoose.connect("mongodb://127.0.0.1:27017/TeaStockSystem");
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Connection esteblished successfully");
