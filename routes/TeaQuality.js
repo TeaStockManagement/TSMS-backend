@@ -25,5 +25,13 @@ router.post('/addteaquality',function(req,res){
 });
 
 
+router.get('/allteaquality',function(req,res){
+    TeaQuality.collection.find({ExpireDate:null}).toArray(function(err,result){
+        if(err) throw err;
+        res.json({result:result});
+    })
+})
+
+
 module.exports = router;
 
