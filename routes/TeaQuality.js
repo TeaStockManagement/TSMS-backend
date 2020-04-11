@@ -10,8 +10,6 @@ router.post('/addteaquality',function(req,res){
      const newquality = new TeaQuality({
         quality:req.body.qualityadd
      });
-
-
     TeaQuality.savequality(newquality,function(err,newquality){
      
         if(err){
@@ -34,13 +32,11 @@ router.get('/allteaquality',function(req,res){
 
 
 router.put('/deleteQuality',function(req,res){
-    TeaQuality.collection.findOneAndUpdate( {_id:req.body.deleteID},{$set : {ExpireDate:"1"}}, {new: true}, (err, doc) => {
-        if (err) {
-            console.log("Something wrong when updating data!");
-        }
-    
-        console.log(doc);
-    });
+    TeaQuality.findOneAndUpdate({_id:req.body.deleteID},{ $set: { ExpireDate: '1' }},{new: true}).then(data=>{
+        console.log(data);
+    }).catch(err=>{
+        console.log(err);
+    })
 });
 
 
