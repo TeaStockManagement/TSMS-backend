@@ -5,7 +5,7 @@ const TeaQlityScheam = new Schema({
 
     quality:String,
     CretionDate:{type:Date,default:Date.now},
-    ExpireDate:{type:Date,default:null}
+    ExpireDate:{type:String,default:null}
 });
 
 module.exports = mongoose.model('TeaQuality',TeaQlityScheam);
