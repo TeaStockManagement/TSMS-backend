@@ -25,4 +25,24 @@ router.post('/additem',function(req,res){
    
 });
 
+
+router.get('/getAllItem',function(req,res){
+    console.log(req.body);
+    teaItem.collection.find({ExpireDate:null}).toArray(function(err,result){
+        if(err) throw err;
+        res.json({result:result});
+        
+    });
+});
+
+
+router.put('/deleteItem',function(req,res){
+    teaItem.findOneAndUpdate({_id:req.body.deleteID},{ $set: { ExpireDate: '1' }},{new: true}).then(data=>{
+        console.log(data);
+    }).catch(err=>{
+        console.log(err);
+    })
+});
+
+
 module.exports = router;
