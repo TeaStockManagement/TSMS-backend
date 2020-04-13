@@ -14,6 +14,7 @@ const supplerorder = require('./routes/SupplerOrder');
 const metirial = require('./routes/Metirial');
 const teaQuality = require('./routes/TeaQuality');
 const Item = require('./routes/Item');
+const Broker = require('./routes/Broker');
 
 
 var app = express();
@@ -48,6 +49,7 @@ app.use("/supplerorder",supplerorder);
 app.use("/metirial",metirial);
 app.use("/TeaQuality",teaQuality);
 app.use("/Item",Item);
+app.use("/Broker",Broker)
 
 
 //connect to MongoDB

@@ -7,7 +7,7 @@ const ItemSchema = new Schema({
     BuyUnitPrice:String,
     SellUnitPrice:String,
     CretionDate:{type:Date,default:Date.now},
-    ExpireDate:{type:Date,default:null}
+    ExpireDate:{type:String,default:null}
 });
 
 module.exports = mongoose.model('Item',ItemSchema);
