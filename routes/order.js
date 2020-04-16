@@ -1,20 +1,20 @@
 var express = require("express");
 var router = express.Router();
 
-var Shop = require('../models/shop.model')
+var Order = require('../models/order.model')
 
 router.post('/add',(req,res)=>{
-    let shop = new Shop(req.body);
-    shop.save().then(shop=>{
-        res.json({status:"200",msg:"Shop added succesfully!!"});
+    let order = new Order(req.body);
+    order.save().then(shop=>{
+        res.json({status:"200",msg:"Order added succesfully!!"});
       }).catch(err=>{
         res.send(err);
       })
 })
 
 router.get('/all',(req,res)=>{
-  Shop.find().then(shop=>{
-    res.json({data:shop})
+  Shop.find().then(order=>{
+    res.json({data:order})
   }).catch(err=>{
     res.status(400).send(err);
   })
