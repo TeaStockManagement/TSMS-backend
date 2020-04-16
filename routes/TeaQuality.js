@@ -31,14 +31,26 @@ router.get('/allteaquality',function(req,res){
 })
 
 
-router.put('/deleteQuality',function(req,res){
-    TeaQuality.findOneAndUpdate({_id:req.body.deleteID},{ $set: { ExpireDate: '1' }},{new: true}).then(data=>{
+router.post('/deleteQuality',function(req,res){
+    TeaQuality.findOneAndUpdate({_id:req.body.deleteID},
+        { $set: { ExpireDate: '1' }},
+        {new: true}).then(data => {
+            res.json({state:true,msg:"Item Successfully Deleted !!"});
+        //console.log(msg);
+    }).catch(err=>{
+        res.state(false).send(err);
+       // console.log(err);
+    })
+});
+
+router.post('/updateTeaQuality',function(req,res){
+    console.log(res.body);
+    TeaQuality.findOneAndUpdate({_id:req.body.qualityID},{ $set: { quality:req.body.qualityupdate }},{new: true}).then(data=>{
         console.log(data);
     }).catch(err=>{
         console.log(err);
     })
 });
-
 
 module.exports = router;
 
