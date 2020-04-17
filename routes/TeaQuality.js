@@ -4,9 +4,7 @@ const router = express.Router();
 const TeaQuality = require('../models/TeaQuality.model');
  
 
-router.post('/addteaquality',function(req,res){
-
-    
+router.post('/addteaquality',function(req,res){ 
      const newquality = new TeaQuality({
         quality:req.body.qualityadd
      });
