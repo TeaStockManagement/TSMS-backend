@@ -7,6 +7,7 @@ var mongoose = require("mongoose");
 
 var usersRouter = require("./routes/users");
 var shopRouter = require("./routes/shops")
+var orderRouter = require("./routes/order")
 
 
 //suppler Order Route
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
 app.use("/shops",shopRouter)
+app.use("/orders",orderRouter)
 
 //suppler Order route
 app.use("/supplerorder",supplerorder);
