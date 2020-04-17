@@ -41,12 +41,14 @@ router.put('/deleteItem',function(req,res){
 });
 
 router.post('/updateItem',function(req,res){
-   let item = new teaItem(req.body)
-    teaItem.findOneAndUpdate({_id:item._id},item.save(),{new: true}).then(data=>{
-        console.log(data);
-    }).catch(err=>{
-        console.log(err);
-    })
+
+    console.log(req.body);
+//    let item = new teaItem(req.body)
+//     teaItem.findOneAndUpdate({_id:item._id},item.save(),{new: true}).then(data=>{
+//         console.log(data);
+//     }).catch(err=>{
+//         console.log(err);
+//     })
 });
 
 
