@@ -3,16 +3,12 @@ const router = express.Router();
 
 const teaItem = require('../models/Item.model');
 
-router.post('/additem',function(req,res){
-
-    
+router.post('/additem',function(req,res){ 
     const newItem = new teaItem({
         Item:req.body.item,
         BuyUnitPrice:req.body.buyprice,
         SellUnitPrice:req.body.sellprice
     });
-
-
     teaItem.saveItem(newItem,function(err,newItem){
     
        if(err){
@@ -43,6 +39,16 @@ router.put('/deleteItem',function(req,res){
         console.log(err);
     })
 });
+
+router.post('/updateItem',function(req,res){
+   let item = new teaItem(req.body)
+    teaItem.findOneAndUpdate({_id:item._id},item.save(),{new: true}).then(data=>{
+        console.log(data);
+    }).catch(err=>{
+        console.log(err);
+    })
+});
+
 
 
 module.exports = router;
