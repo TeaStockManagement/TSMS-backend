@@ -30,7 +30,8 @@ router.post('/authenticate', function(req, res) {
       const payload = {
         username:user.username,
         role:user.role,
-        status:user.status
+        status:user.status,
+        id:user._id
       };
           var token = jwt.sign(payload, config.secret, {
            expiresIn: 1440 // expires in 24 hours

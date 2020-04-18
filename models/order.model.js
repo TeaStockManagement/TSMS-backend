@@ -8,7 +8,10 @@ var orderSchema=mongoose.Schema({
         quantity:Number,
         price:Number
     }],
-    billTotal:Number
+    billTotal:Number,
+    cashAmount:Number,
+    chequeAmount:Number,
+    creditAmount:Number
     });
 
 var order = mongoose.model('Order', orderSchema);
