@@ -11,7 +11,11 @@ var orderSchema=mongoose.Schema({
     billTotal:Number,
     cashAmount:Number,
     chequeAmount:Number,
-    creditAmount:Number
+    creditAmount:Number,
+    repid:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    }
     });
 
 var order = mongoose.model('Order', orderSchema);

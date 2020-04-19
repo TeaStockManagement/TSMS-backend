@@ -3024,7 +3024,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\user\Desktop\Tea Stock\TSMS-front\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\MyWork\Tea Stock\frontend\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
