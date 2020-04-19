@@ -56,7 +56,7 @@ app.use("/Broker",Broker)
 
 //connect to MongoDB
 
-mongoose.connect("mongodb://127.0.0.1:27017/TeaStockSystem");
+mongoose.connect("mongodb://malith:malithk123@ds129053.mlab.com:29053/heroku_cnpflr68");
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Connection esteblished successfully");
